@@ -11,4 +11,8 @@ module.exports = (db) => {
             .then(result => result.rows)
             .catch(err => err)
     }
+
+    return {
+        getProducts
+    }
 }
