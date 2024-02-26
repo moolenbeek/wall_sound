@@ -9,4 +9,5 @@ VALUES
     ('Monitors', CURRENT_TIMESTAMP),
     ('Wireless Microphones', CURRENT_TIMESTAMP),
     ('Communications', CURRENT_TIMESTAMP),
-    ('Processors', CURRENT_TIMESTAMP);
+    ('Processors', CURRENT_TIMESTAMP),
+    ('Cables', CURRENT_TIMESTAMP);
