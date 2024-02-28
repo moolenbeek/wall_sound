@@ -24,8 +24,22 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
+    const getProductByCategory = (category) => {
+        
+        const query = {
+            text:`SELECT * FROM product WHERE category_id = $1`,
+            values: [category]
+        }
+
+        return db
+            .query(query)
+            .then(result => result.rows)
+            .catch(err => err)
+    }
+
     return {
         getProducts,
+        getProductByCategory,
         getProductCategories
     }
 }
