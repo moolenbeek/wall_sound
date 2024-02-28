@@ -24,7 +24,7 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
-    const getProductByCategory = (category) => {
+    const getProductsByCategory = (category) => {
         
         const query = {
             text:`SELECT * FROM product WHERE category_id = $1`,
@@ -39,7 +39,7 @@ module.exports = (db) => {
 
     return {
         getProducts,
-        getProductByCategory,
+        getProductsByCategory,
         getProductCategories
     }
 }
