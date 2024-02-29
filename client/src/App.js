@@ -5,6 +5,9 @@ import axios from 'axios'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 
 function App() {
 
@@ -24,8 +27,6 @@ function App() {
 
   }, []);
 
-  // <ListGroup.Item key={product.id}> {product.product_name} {product.flex_code}</ListGroup.Item>
-
   const productList = products && products.map(product => 
     <Card key={product.id} style={{ width: '18rem' }}>
       <Card.Body>
@@ -35,19 +36,21 @@ function App() {
           Description goes here
         </Card.Text>
         <Card.Subtitle className="mb-2 text-muted">{product.price}</Card.Subtitle>
-        <Card.Link href="#">Add to cart</Card.Link>
+        <Button variant="primary" href="#">Add to cart</Button>{' '}
       </Card.Body>
     </Card>
   );
 
   return (
     <div className="App">
-    
-    <div>
+
+    <Container fluid>
       <ListGroup as="ol" numbered>
+
       {productList}
+
       </ListGroup>
-    </div>
+    </Container>
 
     </div>
   );
