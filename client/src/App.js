@@ -28,7 +28,9 @@ function App() {
   }, []);
 
   const productList = products && products.map(product => 
-    <Card key={product.id} style={{ width: '18rem' }}>
+
+    <>
+    <Card key={product.id} style={{ width: '20rem' }}>
       <Card.Body>
         <Card.Title>{product.product_name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{product.manufacturer}</Card.Subtitle>
@@ -39,19 +41,23 @@ function App() {
         <Button variant="primary" href="#">Add to cart</Button>{' '}
       </Card.Body>
     </Card>
+
+    <br></br>
+    </>
+  
   );
 
   return (
     <div className="App">
+      <br></br>
 
-    <Container fluid>
-      <ListGroup as="ol" numbered>
+      <Container fluid>
+        <ListGroup as="ol" numbered>
 
-      {productList}
+        {productList}
 
-      </ListGroup>
-    </Container>
-
+        </ListGroup>
+      </Container>
     </div>
   );
 }
