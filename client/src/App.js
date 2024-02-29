@@ -19,16 +19,16 @@ function App() {
     })
     .catch(err => console.log(`Error: err.message`))
 
-  }, [])
+  }, []);
 
   const productList = products && products.map(product => <li key={product.id}> {product.product_name} </li>);
 
   return (
     <div className="App">
     
-    <ul>
+    <div>
       {productList}
-    </ul>
+    </div>
 
     </div>
   );
