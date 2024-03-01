@@ -6,8 +6,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function App() {
 
@@ -38,7 +42,8 @@ function App() {
           Description goes here
         </Card.Text>
         <Card.Subtitle className="mb-2 text-muted">{product.price}</Card.Subtitle>
-        <Button variant="primary" href="#">Add to cart</Button>{' '}
+        <Button variant="outline-primary" href="#">Edit</Button>{' '}
+        <Button variant="outline-danger" href="#">Delete</Button>{' '}
       </Card.Body>
     </Card>
 
@@ -49,14 +54,18 @@ function App() {
 
   return (
     <div className="App">
+      <Container fluid>
+
+        <Navbar className="bg-body-tertiary">
+          <Button variant="outline-success" href="#">Add item</Button>{' '}
+        </Navbar>
+        
       <br></br>
 
-      <Container fluid>
         <ListGroup as="ol" numbered>
-
         {productList}
-
         </ListGroup>
+      
       </Container>
     </div>
   );
