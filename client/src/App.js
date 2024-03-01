@@ -6,12 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-
 import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function App() {
 
@@ -41,7 +36,7 @@ function App() {
         <Card.Text>
           Description goes here
         </Card.Text>
-        <Card.Subtitle className="mb-2 text-muted">{product.price}</Card.Subtitle>
+        <Card.Subtitle className="mb-2 text-muted">${product.price}</Card.Subtitle>
         <Button variant="outline-primary" href="#">Edit</Button>{' '}
         <Button variant="outline-danger" href="#">Delete</Button>{' '}
       </Card.Body>
