@@ -7,7 +7,6 @@ const db = require('./db');
 const dbHelpers = require('./helpers/db_helpers')(db);
 
 const indexRouter = require('./routes/index');
-
 const productsRouter = require('./routes/products');
 const productCategoriesRouter = require('./routes/product_categories');
 
