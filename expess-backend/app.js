@@ -26,8 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 app.use('/api/products', productsRouter(dbHelpers));
-app.use('/api/product_categories', productCategoriesRouter(dbHelpers));
 app.use('/api/product_by_category', productsRouter(dbHelpers));
+app.use('/api/product_categories', productCategoriesRouter(dbHelpers));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
