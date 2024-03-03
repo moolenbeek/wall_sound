@@ -16,6 +16,21 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
+    // get a product by its id
+
+    const getProduct = (productId) => {
+        
+        const query = {
+            text:`SELECT * FROM product WHERE id = $1`,
+            values: [productId]
+        }
+
+        return db
+            .query(query)
+            .then(result => result.rows)
+            .catch(err => err)
+    }
+
     // get products by category id
 
     const getProductsByCategory = (category) => {
@@ -53,6 +68,7 @@ module.exports = (db) => {
 
     return {
         getProducts,
+        getProduct,
         getProductsByCategory,
         getProductCategories
     }
