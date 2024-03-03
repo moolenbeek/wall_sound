@@ -10,7 +10,6 @@ const indexRouter = require('./routes/index');
 
 const productsRouter = require('./routes/products');
 const productCategoriesRouter = require('./routes/product_categories');
-const productsByCategoryRouter = require('./routes/products_by_category');
 
 const app = express();
 
@@ -28,7 +27,7 @@ app.use('/', indexRouter);
 
 app.use('/api/products', productsRouter(dbHelpers));
 app.use('/api/product_categories', productCategoriesRouter(dbHelpers));
-app.use('/api/product_by_category', productsByCategoryRouter(dbHelpers));
+app.use('/api/product_by_category', productsRouter(dbHelpers));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
