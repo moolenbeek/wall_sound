@@ -7,7 +7,6 @@ const db = require('./db');
 const dbHelpers = require('./helpers/db_helpers')(db);
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 const productsRouter = require('./routes/products');
 const productCategoriesRouter = require('./routes/product_categories');
@@ -26,7 +25,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 app.use('/api/products', productsRouter(dbHelpers));
 app.use('/api/product_categories', productCategoriesRouter(dbHelpers));
