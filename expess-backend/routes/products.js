@@ -16,10 +16,5 @@ module.exports = ({getProducts, getProductsByCategory}) => {
             .catch((err) => res.json({ error: err.message }));
     })
 
-    // remove product
-    // router.post('/:id', (req, res) => {
-
-    // })
-
     return router
 }

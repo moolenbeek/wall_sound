@@ -16,7 +16,7 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
-    // get product by category id
+    // get products by category id
 
     const getProductsByCategory = (category) => {
         
@@ -30,21 +30,6 @@ module.exports = (db) => {
             .then(result => result.rows)
             .catch(err => err)
     }
-
-    // remove product
-
-    // const removeProduct = () => {
-        
-    //     const query = {
-    //         text:`SELECT * FROM product WHERE category_id = $1`,
-    //         values: [category]
-    //     }
-
-    //     return db
-    //         .query(query)
-    //         .then(result => result.rows)
-    //         .catch(err => err)
-    // }
 
     // -------------------------------------------- //
 
