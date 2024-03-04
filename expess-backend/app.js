@@ -7,7 +7,7 @@ const db = require('./db');
 const dbHelpers = require('./helpers/db_helpers')(db);
 
 const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/products');
+const productRouter = require('./routes/product');
 const categoryRouter = require('./routes/category');
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-app.use('/api/product', productsRouter(dbHelpers));
+app.use('/api/product', productRouter(dbHelpers));
 app.use('/api/category', categoryRouter(dbHelpers));
 
 // catch 404 and forward to error handler
