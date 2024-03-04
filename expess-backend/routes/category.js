@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 
-module.exports = ({getProducts, getProduct}) => {
+module.exports = ({getCategories, getCategory}) => {
 
     router.get('/', (req, res) => {
-        getProducts()
-            .then(products => res.json(products))
+        getCategories()
+            .then(categories => res.json(categories))
             .catch((err) => res.json({ error: err.message }));
     })
 
     router.get('/:id', (req, res) => {
-        getProduct(req.params.id)
-            .then(product => res.json(product))
+        getCategory(req.params.id)
+            .then(category => res.json(category))
             .catch((err) => res.json({ error: err.message }));
     })
 

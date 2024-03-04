@@ -1,5 +1,5 @@
 INSERT INTO
-product_category(category_name, created_at)
+category(category_name, created_at)
 VALUES
     ('Amplifiers', CURRENT_TIMESTAMP),
     ('Speakers', CURRENT_TIMESTAMP),

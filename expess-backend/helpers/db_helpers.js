@@ -31,13 +31,16 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
-    // get products by category id
+    // -------------------------------------------- //
 
-    const getProductsByCategory = (category) => {
+    // ---------------- Categories ---------------- //
+
+    // get all categories
+
+    const getCategories = () => {
         
         const query = {
-            text:`SELECT * FROM product WHERE category_id = $1`,
-            values: [category]
+            text:'SELECT * FROM category;'
         }
 
         return db
@@ -46,16 +49,13 @@ module.exports = (db) => {
             .catch(err => err)
     }
 
-    // -------------------------------------------- //
+    // get a category by its id
 
-    // ---------------- Categories ---------------- //
-
-    // get all categories
-
-    const getProductCategories = () => {
+    const getCategory = (categoryId) => {
         
         const query = {
-            text:'SELECT * FROM product_category;'
+            text:`SELECT * FROM category WHERE id = $1`,
+            values: [categoryId]
         }
 
         return db
@@ -69,7 +69,7 @@ module.exports = (db) => {
     return {
         getProducts,
         getProduct,
-        getProductsByCategory,
-        getProductCategories
+        getCategories,
+        getCategory
     }
 }
