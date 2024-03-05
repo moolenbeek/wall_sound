@@ -6,7 +6,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+
+import Nav from './components/Nav';
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
 
     axios({
       method: 'get',
-      url: '/api/products'
+      url: '/api/product'
     })
     .then(result => {
       console.log(result.data)
@@ -51,9 +52,7 @@ function App() {
     <div className="App">
       <Container fluid>
 
-        <Navbar className="bg-body-tertiary">
-          <Button variant="outline-success" href="#">Add item</Button>{' '}
-        </Navbar>
+      <Nav />
         
       <br></br>
 
